@@ -7,6 +7,7 @@ class Solution:
         largest = ''.join(map(str,sorted(nums,key=CompStr,reverse=True)))
         return '0' if largest[0] == '0' else largest
 
+#initial attempt but slower
 # class Solution:
 #     def largestNumber(self, nums: List[int]) -> str:
 #         def compareLargestDigit(a,b):
