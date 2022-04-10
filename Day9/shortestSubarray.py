@@ -11,6 +11,6 @@ class Solution:
             while Queue and dp[i] - dp[Queue[0]] >= k:
                 n = min(n, i - Queue.popleft())
             while Queue and dp[i] < dp[Queue[-1]]:
-                Queue.pop() # pop right
+                Queue.pop()
             Queue.append(i)
         return n if n != len(nums)+1 else -1
