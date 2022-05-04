@@ -21,4 +21,4 @@ class Solution:
                 newTail.next = nh
                 newTail = nh
             temp = temp.next
-        return newHead.next
+        return newHead.next	
