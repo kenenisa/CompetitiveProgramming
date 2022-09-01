@@ -4,8 +4,7 @@ class Solution:
         
         for word in wordList:
             for i in range(len(word)):
-                inside = word[:i] + "*" + word[i+1:]
-                df[inside].append(word)
+                df[word[:i] + "*" + word[i+1:]].append(word)
                 
         visited = set()
         visited.add(beginWord)
@@ -15,8 +14,7 @@ class Solution:
         while queue:
             node, lvl = queue.popleft()
             for i in range(len(node)):
-                word = node[:i] + "*" + node[i+1:]
-                for x in df[word]:  
+                for x in df[node[:i] + "*" + node[i+1:]]:  
                     if x == endWord:
                         return lvl+1
                     if x not in visited:
