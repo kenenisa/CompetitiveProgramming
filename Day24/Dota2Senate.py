@@ -7,8 +7,8 @@ class Solution:
         for i,x in enumerate(senate):
             if x == "R":
                 r.append(i)
-            else:
-                d.append(i)
+                continue
+            d.append(i)
                 
         while r and d:
             if r[0] < d[0]:
