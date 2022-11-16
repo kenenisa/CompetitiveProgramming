@@ -21,3 +21,4 @@ class Solution:
                 else:
                     stack.append(i)
         return "".join(stack)
+    

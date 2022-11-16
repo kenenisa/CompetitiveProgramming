@@ -1,26 +1,23 @@
-lines = [
-'3 5 2 10',
-'6 7 6 10',
-'6 7 4 10'
-]
-
-for x in range(0,len(lines)):
-    line = list(map(int,lines[x].split()))
-    pieces = line[:-1]
-    l = line[-1]
-    amount = 0
-    while pieces:
-        k = l
-        j = 0
-        while k>0 and j<len(pieces):
-            if(pieces[j] <= k):
-                val = pieces.pop(j)
-                k = k - val
-            else:
-                j += 1 
-        amount += 1
-    print(amount)
-        # print(max(a[:i]+a[i+1:]))
-
-
-
+tests = int(input())
+def validStone(r1,r2,d):
+    return d <= r1 - r2 or d == r1 + r2
+def sortDistance(val):
+    return val[0]
+for _ in range(tests):
+    r1,r2 = list(map(int,input().split()))
+    stones = []
+    n = int(input())
+    for i in range(n):
+        x,y = list(map(int,input().split()))
+        d = math.sqrt(2 * (x + y))
+        if validStone(r1,r2,d):
+            stones.append([d,'red'])
+    m = int(input())
+    for i in range(m):
+        z,w = list(map(int,input().split()))
+        d = math.sqrt(2 * (z + w))
+        if validStone(r1,r2,d):
+            stones.append([d,'yellow'])
+    stones.sort(key=sortDistance)
+    
+    print('Case #' + str(_) +': ' + str(result))
