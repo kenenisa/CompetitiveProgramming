@@ -1,24 +1,12 @@
-import numpy as np
-import matplotlib.pyplot as plt
 
-# Set the center of the circle
-center = 1 - 1j
+n1 = 0
+n2 = 0
+nums={'0':0,'1':1, '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
+for i in num1:
+    n1 = 10 * n1 + nums[i]
+for i in num2:
+    n2 = 10 * n2 + nums[i]
 
-# Set the radius of the circle
-radius = 1
+result = n1*n2
 
-# Create an array of angles from 0 to 2*pi
-angles = np.linspace(0, 2*np.pi, 100)
-
-# Calculate the x and y coordinates of the points on the circle
-xs = radius * np.cos(angles) + center.real
-ys = radius * np.sin(angles) + center.imag
-
-# Plot the circle
-plt.plot(xs, ys)
-
-# Add labels and show the plot
-plt.xlabel('Real part')
-plt.ylabel('Imaginary part')
-plt.title('Set of points z such that |z - (1 + i)| = 1')
-plt.show()
+print(result)
