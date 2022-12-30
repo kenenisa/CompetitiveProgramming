@@ -1,12 +1,17 @@
+from collections import defaultdict 
+class Solution: 
+    def countPairs(self, deliciousness) -> int: 
+        df=defaultdict(int) 
+        result=0 
+        for d in deliciousness: 
+            for i in range(22): 
+                result+=df[2**i-d] 
+            df[d]+=1 
+        return result%(10**9+7) 
 
-n1 = 0
-n2 = 0
-nums={'0':0,'1':1, '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
-for i in num1:
-    n1 = 10 * n1 + nums[i]
-for i in num2:
-    n2 = 10 * n2 + nums[i]
 
-result = n1*n2
-
-print(result)
+if __name__=="__main__": 
+    solution=Solution() 
+    deliciousness = [1,3,5,7,9] 
+    res =solution.countPairs(deliciousness) 
+    print(res)
