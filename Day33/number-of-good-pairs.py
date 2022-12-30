@@ -5,4 +5,4 @@ class Solution:
             for j in range(i+1,len(nums)):
                 if nums[i] == nums[j]:
                     result += 1
-        return result
+        return resultc
