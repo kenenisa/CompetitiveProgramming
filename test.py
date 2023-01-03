@@ -1,17 +1,9 @@
-from collections import defaultdict 
-class Solution: 
-    def countPairs(self, deliciousness) -> int: 
-        df=defaultdict(int) 
-        result=0 
-        for d in deliciousness: 
-            for i in range(22): 
-                result+=df[2**i-d] 
-            df[d]+=1 
-        return result%(10**9+7) 
+# source = ["/*Test program */", "int main()", "{ ", "  // variable declaration ", "int a, b, c;", "/* This is a test", "   multiline  ", "   comment for ", "   testing */", "a = b + c;", "}"]
+source = ["a/*comment", "line", "more_comment*/b"]
 
+n = len(source)
+code = []
+for i in range(n):
+    source[i] = source[i].split("//")[0]
+block_opened = False
 
-if __name__=="__main__": 
-    solution=Solution() 
-    deliciousness = [1,3,5,7,9] 
-    res =solution.countPairs(deliciousness) 
-    print(res)
