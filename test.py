@@ -1,3 +1,51 @@
-["/*/dadb/*/aec*////*//*ee*//*//b*////*badbda//*bbacdbbd*//ceb//*cdd//**//de*////*","ec//*//*eebd/*/*//*////*ea/*/bc*//cbdacbeadcac/*/cee*//bcdcdde*//adabeaccdd//*","ddadbede//*//*/*/ac/*/ea//*bbeb/*/ea//*a//*//*cdbeb*//ab/*/abde/*//*/d//**////*","e/*/eabeea/*///*c*////*dc*//bcadcde/*/acbe//*d/*/*//ae//*dc//*cc//*//*eaebb*//","eed*//cd//**///*/*//e//*bbcbbaedb*//aabb//*badb*//d/*/e*//ade//*bacbc*//ea//*a","/*/bcbc//*ebdb/*/bab/*/a/*//*/d/*///*de/*///*d*//dc*///*/cd//*ccd//*a//*caacad","/*/cadaacca/*/c/*/c*//bb*////*//*e//*/*//*//*//*/ebd*//abd/*/ce*//e/*/aaa//*//*","cbae*//cc*///*/e/*//*/d*//bdeeee//*b*//de*//aceca*//dddd*///*///*deba*//abbdd/*/","dcabe/*/a/*/bdc//*cec*//ebabc//**//*//cc//*b*//*////*abdea*///*/c*//bc//*/*/ae","badcc//**//*///*/dd//*d*//*//*////*d*//eabb/*/de/*//*/*//a/*/c/*/c//*dad/*/*//","dd*////*//*//*/*/*//e/*/ec*//cac*//d//*aadc/*/ae/*/ebc//*//**//*///*/bbd*//ee/*/","eb/*///*cd*//dcdbaaadd//*ced/*/dcabe//*//*a/*//*///*ea*///*//*/*//b/*//*/dd/*/","ba*//e*//cd//*/*/d...
-Output
-["aec*","ec","ddadbede","e","eed*","bab/*/a/*","c/*/c*","cbae*","dcabebdc","badcc","dd*","eb/dcdbaaadd","ba*","ab","*","*","aeabdccccd","c/aa","de/aedb*","*","*","/*e","e/edceacc/*","ca","ec","ebdce","dadc","/*b*","cbeadebcaebded*","ee","eb","dd","cbccc","da*","d*","b*","dac*","de","e","b/*/ed*","dbbbe","ccd*","*","adaabdaaea","eec*","/a/*/ede","*","*","/ddddcab*","cb*","b*","*","aaadddd/*beeddb/*","bd*","ad","*","*","e","a*","a","d*","e*","cedc*","*","*","eb","*","b*","*","ba*","da*","eccd*/ab","*","/*d","a","aa","*","cadbbd","d","*","c","d/d/*/*","d/c","dbbdedece"]
+# source = ["/*Test program */", "int main()", "{ ", "  // variable declaration ", "int a, b, c;", "/* This is a test", "   multiline  ", "   block for ", "   testing */", "a = b + c;", "}"]
+source = ["a/*comment", "line", "more_comment*/b"]
+code = []
+block = False
+line = ''
+for s in source:
+    n = len(s)
+    i = 0
+    while i < n: 
+        if not block:
+            if s[i] == '/' and i != n - 1 and s[i+1] == '/': 
+                break
+            elif s[i] == '/' and i != n - 1 and s[i+1] == '*':
+                block = True
+                i+=1
+            else:
+                line += s[i]
+        else:
+            if s[i] == '*' and i < n-1 and s[i+1] == '/':
+                block = False
+                i+=1
+        i += 1
+    if not block and len(line) > 0:
+        code.append(line)
+        line = ''
+print(code)
+# List<String> code = new ArrayList<>();
+# StringBuilder sb = new StringBuilder();
+# boolean block = false;
+# for (String s: source) {
+#     for (int i = 0; i < s.length(); i++) {
+#         if (!block) {
+#             if (s.charAt(i) == '/' && i != s.length()-1 && s.charAt(i+1) == '/') break;
+#             else if (s.charAt(i) == '/' && i != s.length()-1 && s.charAt(i+1) == '*') {
+#                 block = true;
+#                 i++;
+#             }
+#             else sb.append(s.charAt(i));
+#         } else {
+#             if (s.charAt(i) == '*' && i < s.length()-1 && s.charAt(i+1) == '/') {
+#                 block = false;
+#                 i++;
+#             }
+#         }
+#     }
+#     if (!block && sb.length() > 0) {
+#         code.add(sb.toString());
+#         sb.setLength(0);
+#     }
+# }
+# return code;
