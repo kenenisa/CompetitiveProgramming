@@ -1,0 +1,2 @@
+# Contest links
+- GROUP47 contest #1 -> https://codeforces.com/gym/419532/standings
