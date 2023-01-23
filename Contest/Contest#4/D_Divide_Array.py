@@ -1,25 +1,25 @@
 n = int(input())
 arr = list(map(int, input().split()))
 
-neg = []
-pos = []
-zero = []
+ng = []
+p = []
+z = []
 
 for i in arr:
     if i < 0:
-        neg.append(i)
+        ng.append(i)
     elif i > 0:
-        pos.append(i)
+        p.append(i)
     else:
-        zero.append(i)
+        z.append(i)
 
-if not pos:
-    if len(neg)>1:
-        pos.append(neg.pop())
-        pos.append(neg.pop())
-if len(neg) % 2 == 0:
-    zero.append(neg.pop())
+if not p:
+    if len(ng)>1:
+        p.append(ng.pop())
+        p.append(ng.pop())
+if len(ng) % 2 == 0:
+    z.append(ng.pop())
 
-print(len(neg), *neg)
-print(len(pos), *pos)
-print(len(zero), *zero)
+print(len(ng), *ng)
+print(len(p), *p)
+print(len(z), *z)

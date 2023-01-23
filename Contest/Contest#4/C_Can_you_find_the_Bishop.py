@@ -12,6 +12,8 @@ for _ in range(t):
                     if board[i-1][j-1] == '#' and board[i+1][j-1] == '#' and board[i+1][j+1] == '#' and board[i-1][j+1] == '#':
                         return [i,j]
     f = findTheBishop()
-    print(f[0]+1,f[1]+1)
-        
-                        
+    print(f[0]+1,f[1]+1)                    
+# -i -j
+# +i -j
+# +i +j
+# -i +j
