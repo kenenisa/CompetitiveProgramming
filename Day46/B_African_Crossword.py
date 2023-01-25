@@ -8,7 +8,7 @@ for i in range(n):
     for j in range(m):
         if grid[i][j][0] in df:
             grid[i][df[grid[i][j][0]]][1] = 'x'
-            grid[i][j][1] = '#'
+            grid[i][j][1] = 'x'
         df[grid[i][j][0]] = j
         
 for j in range(m):
@@ -16,7 +16,7 @@ for j in range(m):
     for i in range(n):
         if grid[i][j][0] in df:
             grid[df[grid[i][j][0]]][j][1] = 'x'
-            grid[i][j][1] = '#'
+            grid[i][j][1] = 'x'
         df[grid[i][j][0]] = i
 word = []
 for i in range(n):
