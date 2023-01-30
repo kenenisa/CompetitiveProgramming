@@ -3,3 +3,4 @@
 - GROUP47 contest #2 -> https://codeforces.com/gym/420178/standings
 - GROUP47 contest #3 -> https://codeforces.com/gym/421700/standings
 - GROUP47 contest #4 -> https://codeforces.com/gym/422879/standings
+- GROUP47 contest #5 -> https://codeforces.com/gym/424233/standings
