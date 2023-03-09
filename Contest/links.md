@@ -9,3 +9,5 @@
 - GROUP47 contest #8 -> https://codeforces.com/gym/428258/standings
 - GROUP47 contest #9 -> https://codeforces.com/gym/429357/standings
 - GROUP47 contest #10 -> https://codeforces.com/gym/430578/standings
+- GROUP47 contest #11 -> https://codeforces.com/gym/431213/standings
+- 
