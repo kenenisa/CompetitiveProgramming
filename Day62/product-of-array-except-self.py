@@ -12,7 +12,7 @@ class Solution:
         
         result = [0]*n
         if zeroes > 1:
-            return [0]*n
+            return result
         elif zeroes == 1:
             for i in range(n):
                 if nums[i] == 0:
