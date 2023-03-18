@@ -21,7 +21,7 @@ class TopVotedCandidate:
             self.results[i] = last
             
     def binarySearch(self,t,start,end):
-        if self.t[end] <= t and start == end - 1:
+        if self.t[end] <= t and start == end - 1: 
             return end
         middle = int((start + end) / 2)
         if self.t[middle] == t:
