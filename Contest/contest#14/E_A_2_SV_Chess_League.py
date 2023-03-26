@@ -10,37 +10,37 @@ def recur(ic):
     if n == 1:
         result.append(ic[0])
         return
-    winners = []
-    win = []
-    loser = []
-    ball = []
+    first = []
+    second = []
+    third = []
+    fourth = []
     flag = True
     for i in range(0,n,2):
         if abs(a[ic[i]] - a[ic[i+1]]) > 400:
             if a[ic[i]] > a[ic[i+1]]:
-                winners.append(ic[i])
-                win.append(ic[i])
-                loser.append(ic[i])
-                ball.append(ic[i])
+                first.append(ic[i])
+                second.append(ic[i])
+                third.append(ic[i])
+                fourth.append(ic[i])
             else:
-                win.append(ic[i+1])
-                winners.append(ic[i+1])
-                loser.append(ic[i+1])
-                ball.append(ic[i+1])
+                second.append(ic[i+1])
+                first.append(ic[i+1])
+                third.append(ic[i+1])
+                fourth.append(ic[i+1])
         else:
-            winners.append(ic[i])
-            win.append(ic[i+1])
+            first.append(ic[i])
+            second.append(ic[i+1])
             if flag:
-                loser.append(ic[i])
-                ball.append(ic[i+1])
+                third.append(ic[i])
+                fourth.append(ic[i+1])
                 flag = False
             else:
-                loser.append(ic[i+1])
-                ball.append(ic[i])
+                third.append(ic[i+1])
+                fourth.append(ic[i])
                 flag = True
-    recur(winners)
-    recur(win)
-    recur(loser)
-    recur(ball)
+    recur(first)
+    recur(second)
+    recur(third)
+    recur(fourth)
 recur(idx)
 print(*sorted(map(lambda item: item + 1 ,list(set(result)))))

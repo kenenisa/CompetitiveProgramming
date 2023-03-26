@@ -1,3 +1,4 @@
+from functools import cache
 t = int(input())
 for _ in range(t):
     n = int(input())
@@ -6,6 +7,7 @@ for _ in range(t):
     for aa in a:
         prefix.append(aa + prefix[-1])
     mi = float('inf')
+    @cache
     def recur(start,end):
         global mi
         if start >= n:
