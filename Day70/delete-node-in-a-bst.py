@@ -31,3 +31,4 @@ class Solution:
             node.left = deleteTree(node.left)
             return node
         return deleteTree(root)
+    
