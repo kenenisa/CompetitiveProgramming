@@ -10,9 +10,7 @@ vector<vector<int> > tree;
 int recur(int node, int path, int parent) {
     int catCount = 0, valid = 0;
     bool leaf = true;
-    if(cats[node] == 0) {
-        catCount = 0;
-    } else {
+    if(cats[node] == 1) {
         catCount = path + cats[node];
     }
     if(catCount > m) {

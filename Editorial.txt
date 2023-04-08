@@ -1,0 +1,22 @@
+Input
+The first line contains two integers, n and m (2 ≤ n ≤ 105, 1 ≤ m ≤ n) — the number of vertices of the tree and the maximum number of consecutive vertices with cats that is still ok for Kefa.
+
+The second line contains n integers a1, a2, ..., an, where each ai either equals to 0 (then vertex i has no cat), or equals to 1 (then vertex i has a cat).
+
+Next n - 1 lines contains the edges of the tree in the format "xi yi" (without the quotes) (1 ≤ xi, yi ≤ n, xi ≠ yi), where xi and yi are the vertices of the tree, connected by an edge.
+
+It is guaranteed that the given set of edges specifies a tree.
+
+Output
+A single integer — the number of distinct leaves of a tree the path to which from Kefa's home contains at most m consecutive vertices with cats.
+
+Solution 
+
+Let the number of restaurants be R then we have R leafs in the park, we can traverse through the paths of 
+the tree. if we don't find any m consecutive cats then the leaf node should return 1. if we find m consecutive cats
+then we should return 0 for that path. Then all the sum of what the paths return will be the answer.
+
+The other tricky part is to construct a tree from the x and y we are given. x maybe the child or the parent or 
+y could be the child or the parent, so we need to consider each case. and when we start traversing through the 
+paths of the tree we should ignore the parents and just consider the children.
+
