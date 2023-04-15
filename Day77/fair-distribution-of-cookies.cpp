@@ -1,4 +1,3 @@
-
 class Solution {
 public:
     int result = INT_MAX;
@@ -11,30 +10,36 @@ public:
             result = min(result,m);
         }else{
             for(int j = 0; j < k;j++){
-                int d[k];
-                std::copy(distribution, distribution+k, d);
-                d[j] += cook[i];
-                dfs(i+1,d);
+                distribution[j] += cook[i];
+                dfs(i+1,distribution);
+                distribution[j] -= cook[i];
             }
         }
     }
     int distributeCookies(vector<int>& cookies, int kk) {
         n = cookies.size();
-        k = kk;
-        cook = cookies;
-        // int dis[2] = {31,2};
-        // int c[2];
-        // std::copy(dis, dis+2, c);
-        int distribution[k];
-        std::fill_n(distribution,k,0);
-        dfs(0,distribution);
-        return result;
+        if (n == k){
+            return *max_element(cookies.begin(),cookies.end());
+        }else{
+            k = kk;
+            cook = cookies;
+            // int dis[2] = {31,2};
+            // int c[2];
+            // std::copy(dis, dis+2, c);
+            int distribution[k];
+            std::fill_n(distribution,k,0);
+            dfs(0,distribution);
+            return result;
+        }
+
     }
 };
-//TOO SLOW
+// Python TOO SLOW
 // class Solution:
 //     def distributeCookies(self, cookies: List[int], k: int) -> int:
 //         n = len(cookies)
+//         if n == k:
+//             return max(cookies)
 //         result = float('inf')
 //         def dfs(i,distribution):
 //             nonlocal result
@@ -42,8 +47,8 @@ public:
 //                 result = min(result,max(distribution))
 //                 return
 //             for j in range(k):
-//                 d = distribution[::]
-//                 d[j] += cookies[i]
-//                 dfs(i+1,d)
+//                 distribution[j] += cookies[i]
+//                 dfs(i+1,distribution)
+//                 distribution[j] -= cookies[i]
 //         dfs(0,[0]*k)
 //         return result
