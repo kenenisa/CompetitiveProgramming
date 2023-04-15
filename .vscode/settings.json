@@ -7,5 +7,11 @@
         "Qmin",
         "UDDDUDUU",
         "inps"
-    ]
+    ],
+    "files.associations": {
+        "*.js": "javascript",
+        "*.tsx": "typescriptreact",
+        "*.ts": "typescript",
+        "__bit_reference": "cpp"
+    }
 }
