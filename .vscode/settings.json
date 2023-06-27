@@ -77,5 +77,10 @@
         "vector": "cpp",
         "algorithm": "cpp",
         "__verbose_abort": "cpp"
-    }
+    },
+    "cph.general.onceMaintainerMessage": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none"
 }
