@@ -7,8 +7,11 @@
 
 class Solution:
     def distanceK(self, root: TreeNode, target: TreeNode, k: int) -> List[int]:
+
         df = defaultdict(list)
 
+        df = defaultdict(list)
+        
         def dfs(node):
             if not node: return 
             if node.left:
