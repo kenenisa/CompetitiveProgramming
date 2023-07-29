@@ -1,0 +1,5 @@
+n = int(input())
+s = input()
+zero = s.count("0")
+one = s.count("1")
+print(abs(zero-one))
