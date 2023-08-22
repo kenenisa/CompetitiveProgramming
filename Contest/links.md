@@ -17,7 +17,7 @@
 - GROUP47 contest #15 -> https://codeforces.com/gym/436386/standings
 - GROUP47 contest #16 -> https://codeforces.com/gym/437545/standings
 - GROUP47 contest #17 -> https://codeforces.com/gym/438582/standings
-- GROUP47 contest #18 -> 
+- GROUP47 contest #18 -> https://codeforces.com/contests/439859 (needs fix)
 - GROUP47 contest #19 -> https://codeforces.com/gym/440900/standings
 - GROUP47 contest #20 -> https://codeforces.com/gym/442062/standings
 - GROUP47 contest #21 -> https://codeforces.com/gym/443056/standings
