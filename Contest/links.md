@@ -15,3 +15,24 @@
 - GROUP47 contest #14 -> https://codeforces.com/gym/433716/standings
 - GROUP47 contest #15 -> https://codeforces.com/gym/434753/standings
 - GROUP47 contest #16 -> https://codeforces.com/gym/436386/standings
+- GROUP47 contest #17 -> https://codeforces.com/gym/438582/standings
+- GROUP47 contest #18 -> 
+- GROUP47 contest #19 -> https://codeforces.com/gym/440900/standings
+- GROUP47 contest #20 -> https://codeforces.com/gym/442062/standings
+- GROUP47 contest #21 -> https://codeforces.com/gym/443056/standings
+- GROUP47 contest #22 -> https://codeforces.com/gym/444629/standings
+- GROUP47 contest #23 -> https://codeforces.com/gym/445680/standings
+- GROUP47 mini Contest1 -> https://codeforces.com/gym/445382/standings
+- GROUP47 mini Contest2 -> https://codeforces.com/gym/445382/standings
+- GROUP47 contest #24 -> https://codeforces.com/gym/446741/standings
+- GROUP47 contest #25 -> https://codeforces.com/gym/447850/standings
+- GROUP47 contest #26 -> https://codeforces.com/gym/449131/standings
+- GROUP47 contest #27 -> https://codeforces.com/gym/450159/standings
+- GROUP47 contest #28 -> https://codeforces.com/gym/451334/standings
+- GROUP47 contest #29 -> https://codeforces.com/gym/452649/standings
+- GROUP47 contest #30 -> https://codeforces.com/gym/455594/standings
+- GROUP47 contest #31 -> https://codeforces.com/gym/458814/standings
+- GROUP47 contest #32 -> https://codeforces.com/gym/460200/standings
+- GROUP47 contest #33 -> https://codeforces.com/gym/464369/standings
+- GROUP47 contest #34 -> https://codeforces.com/gym/465866/standings
+- GROUP47 contest #35 -> https://codeforces.com/gym/468857/standings
