@@ -8,9 +8,9 @@ for _ in range(m):
     df[u].append((v, w))
     df[v].append((u, w))
 
-inf = int(1e6 + 1)
-distance = [inf for _ in range(n+1)]
-distance[1] = 0
+inf = float('inf')
+distance = [(inf,None) for _ in range(n+1)]
+distance[1] = (0,None)
 h = [(0, 1)]
 valid = False
 while h:
@@ -20,23 +20,16 @@ while h:
         break
     for v, x in df[u]:
         wi = w+x
-        if wi < distance[v]:
-            distance[v] = wi
+        if wi < distance[v][0]:
+            distance[v] = (wi,u)
             heappush(h, (wi, v))
 if not valid:
     print(-1)
     exit()
 result = []
-visited = set()
-def dfs(node):
-    if node not in visited:
-        result.append(node)
-        min_node = None
-        min_val = inf
-        for v, _ in df[node]:
-            if distance[v] < min_val:
-                min_node = v
-        visited.add(node)
-        dfs(min_node)
-dfs(n)
+i = n
+while i:
+    result.append(i)
+    i = distance[i][1]
+result.reverse()
 print(*result)
