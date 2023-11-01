@@ -1,32 +1,15 @@
 class Solution {
 public:
-    pair<short,short> dial(short num,short i){
-        short exp = pow(10,i);
-        short inc = num;
-        short dec = num;
-        short place = floor((num % (short)pow(10,i+1))/(short)pow(10,i));
-        if(place == 9)
-            inc -= exp * 9;
-        else
-            inc += exp;
-        
-        if(place == 0)
-            dec += (exp * 9);
-        else
-            dec -= exp;
-        
-        return make_pair(inc,dec);
-    }
+
     int openLock(vector<string>& deadends, string target) {
         int t = stoi(target);
-        unordered_set<short> visited;
-        
+        bool visited[10000]{};
         for(string dead : deadends){
-            visited.insert((short) stoi(dead));
+            visited[stoi(dead)] = true;
         }
-        if(visited.find(0) != visited.end())
+        if(visited[0])
             return -1;
-        visited.insert(0);
+        visited[0] = true;
         deque<pair<short,short>> q;
         q.push_back(make_pair(0,0));
         while(!q.empty()){
@@ -35,14 +18,27 @@ public:
             if(node.first == t)
                 return node.second;
             for(short i = 0;  i < 4;i++){
-                pair<short,short> mod = dial(node.first,i);
-                if(visited.find(mod.first) == visited.end()){
-                    q.push_back(make_pair(mod.first,node.second+1));
-                    visited.insert(mod.first);
+                short exp = pow(10,i);
+                short inc = node.first;
+                short dec = node.first;
+                short place = floor((node.first % (short)pow(10,i+1))/(short)pow(10,i));
+                if(place == 9)
+                    inc -= exp * 9;
+                else
+                    inc += exp;
+                
+                if(place == 0)
+                    dec += (exp * 9);
+                else
+                    dec -= exp;
+                
+                if(!visited[inc]){
+                    q.push_back(make_pair(inc,node.second+1));
+                    visited[inc] = true;
                 }
-                if(visited.find(mod.second) == visited.end()){
-                    q.push_back(make_pair(mod.second,node.second+1));
-                    visited.insert(mod.second);
+                if(!visited[dec]){
+                    q.push_back(make_pair(dec,node.second+1));
+                    visited[dec]= true;
                 }
             }
 
