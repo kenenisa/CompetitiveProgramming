@@ -76,7 +76,9 @@
         "variant": "cpp",
         "vector": "cpp",
         "algorithm": "cpp",
-        "__verbose_abort": "cpp"
+        "__verbose_abort": "cpp",
+        "charconv": "cpp",
+        "set": "cpp"
     },
     "cph.general.onceMaintainerMessage": false,
     "[python]": {
