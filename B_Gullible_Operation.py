@@ -10,3 +10,4 @@ def countBits(n):
 for _ in range(t):
     n = int(input())
     print(pow(3,countBits(n)))
+
